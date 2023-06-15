@@ -7,3 +7,4 @@ install:
 db_prepare:
 	(cd backend && yarn prisma db push)
 	(cd backend && yarn prisma generate)
+

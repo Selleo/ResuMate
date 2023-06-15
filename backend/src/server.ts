@@ -17,6 +17,14 @@ app.get("/hello", async (req: Request, res: Response) => {
   res.send("Hello, world!");
 });
 
-app.listen(port, () => {
+app.get("/stop", (req: Request, res: Response) => {
+  res.send("Stopping server...");
+  server.close(() => {
+    console.log("Server stopped");
+    process.exit(0);
+  });
+});
+
+const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/`);
 });
