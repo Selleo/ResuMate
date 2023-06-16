@@ -1,0 +1,63 @@
+.kanban-card {
+    border: 1px solid #ccc;
+    width: 532px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.card-header {
+    display: flex;
+    padding: 16px;
+    gap: 10px;
+}
+.card-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.card-header p {
+    color: #696B72;
+}
+.card-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.points{
+    color: #FF6D2A;
+}
+.badge{
+    background-color: #F4F5F5;
+    color: #4C4D52;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.date-time{
+    font-size: 14px;
+}
+.card-points {
+    padding: 10px 16px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+}
