@@ -18,9 +18,9 @@ model Technology {
 
 model Candidate {
   id         Int      @id @default(autoincrement())
-  name       String
-  surname    String
-  skills     String
+  name       String?
+  surname    String?
+  skills     String?
   favourite  Boolean? @default(false)
   englishLvl String?
   age        String?

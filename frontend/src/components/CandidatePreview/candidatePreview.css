@@ -1,0 +1,187 @@
+body:has(.candidate) {
+  background-color: #f8f8f8;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.candidate {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  transition: all 0.3s ease-in-out;
+  padding: 41px 32px;
+  box-shadow: 0px 32px 72px rgba(47, 48, 51, 0.07),
+    0px 0px 16px rgba(47, 48, 51, 0.05);
+  border-radius: 8px;
+  font-family: "Poppins";
+}
+
+.candidate-header {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.candidate-data {
+  display: flex;
+  align-items: center;
+}
+
+.candidate-img {
+  border-radius: 50%;
+  margin-right: 32px;
+}
+
+.header-menu {
+  height: 44px;
+}
+
+.header-candidate-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.header-candidate-id {
+  color: #696b72;
+}
+
+.header-candidate-name {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2f3033;
+}
+
+.header-menu {
+  display: flex;
+  gap: 8px;
+}
+
+.menu-star {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.menu-star svg {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-return {
+  padding: 8px;
+  border: 1px solid #ed763f;
+  color: #ed763f;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.candidate .candidate-header button {
+  background-color: #fff;
+  border: 1px solid #ed763f;
+  color: #ed763f;
+  font-weight: 600;
+  height: 100%;
+}
+
+.candidate-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.candidate-info > div {
+  width: 33%;
+}
+
+.candidate-info > div:not(:last-child) {
+  margin-right: 56px;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0.01em;
+  color: #696b72;
+  margin-bottom: 16px;
+}
+
+.section-content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #696b72;
+}
+
+.score-graph {
+  display: flex;
+  width: 100%;
+}
+.graph {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.graph-wave {
+  background: rgba(255, 109, 42, 0.1);
+  border-radius: 1000% 1000% 0 0;
+  position: absolute;
+  width: 400%;
+  height: 10em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.graph-wave:nth-of-type(2) {
+  background: rgba(255, 109, 42, 0.3);
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.graph-wave:nth-of-type(3) {
+  background: rgba(255, 109, 42, 0.8);
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(-20%);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
