@@ -1,0 +1,40 @@
+.nav{
+    padding: 20px;
+}
+.nav-badges{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+    background-color: #F4F5F5;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.badge{
+    display: flex;
+    background-color: #FFFFFF;
+    color: #4C4D52;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.badge-icon{
+    color: #FF6D2A;
+    font-size: 14px;
+}
+.badge-link{
+    color: #4C4D52;
+    text-decoration: none;
+}
+
+.nav-badges div:first-child{
+    background-color: #FF6D2A;
+    color: white !important;
+}
+.nav-badges div:first-child a{
+    color: white !important;
+}
