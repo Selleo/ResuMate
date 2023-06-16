@@ -11,6 +11,21 @@ model User {
   id String @id @default(cuid())
 }
 
-model Resume {
-  id String @id @default(cuid())
+model Technology {
+  id   String @id @default(cuid())
+  name String
+}
+
+model Candidate {
+  id         String   @id @default(cuid())
+  name       String
+  surname    String
+  skills     String
+  favourite  Boolean? @default(false)
+  englishLvl String?
+  age        String?
+  studies    String?
+  github     String?
+  website    String?
+  city       String?
 }
