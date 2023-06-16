@@ -17,7 +17,7 @@ model Technology {
 }
 
 model Candidate {
-  id         String   @id @default(cuid())
+  id         Int      @id @default(autoincrement())
   name       String
   surname    String
   skills     String
@@ -28,4 +28,5 @@ model Candidate {
   github     String?
   website    String?
   city       String?
+  grade      Int?
 }
