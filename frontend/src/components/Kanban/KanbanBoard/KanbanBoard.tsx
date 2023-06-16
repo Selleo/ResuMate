@@ -1,7 +1,10 @@
 import {useState} from "react";
 import './KanbanBoard.css';
 import {KanbanCard} from "../KanbanCard/KanbanCard.tsx";
-import   LocationMap from '../../../assets/icons/Location.svg'
+import  LocationMap from '../../../assets/icons/Location.svg'
+import Language from '../../../assets/icons/Language.svg'
+import github from '../../../assets/icons/github.svg'
+
 
 
 type Props = {
@@ -16,25 +19,26 @@ export const KanbanBoard = () => {
     title: 'Task 1',
     avatar: 'https://i.pravatar.cc/150?img=12',
     links: [
-      { name: 'Link 1', url: 'http://example.com/1' ,icon:LocationMap},
-      { name: 'Link 2', url: 'http://example.com/2' },
+      { name: 'Bielsko-Biała', url: 'http://example.com/1' ,icon:LocationMap},
+      { name: 'English: B.2.2', url: 'http://example.com/2',icon:Language },
+      { name: 'Github', url: 'http://example.com/2',icon:github}
       // More links...
     ],
   }, {
     title: 'Task 2',
     avatar: 'https://i.pravatar.cc/150?img=1',
     links: [
-      { name: 'Link 1', url: 'http://example.com/1' },
-      { name: 'Link 2', url: 'http://example.com/2' },
-      // More links...
+      { name: 'Bielsko-Biała', url: 'http://example.com/1' ,icon:LocationMap},
+      { name: 'English: B.2.2', url: 'http://example.com/2',icon:Language },
+      { name: 'Github', url: 'http://example.com/2',icon:github}
     ],
   }, {
     title: 'Task 3',
     avatar: 'https://i.pravatar.cc/150?img=22',
     links: [
-      { name: 'Link 1', url: 'http://example.com/1' },
-      { name: 'Link 2', url: 'http://example.com/2' },
-      // More links...
+      { name: 'Bielsko-Biała', url: 'http://example.com/1' ,icon:LocationMap},
+      { name: 'English: B.2.2', url: 'http://example.com/2',icon:Language },
+      { name: 'Github', url: 'http://example.com/2',icon:github}
     ],
   }]);
   const [inProgress, setInProgress] = useState([]);
@@ -64,11 +68,14 @@ export const KanbanBoard = () => {
 
 
   return (
-    <div>
 
       <div className="kanban-board">
         <div className="kanban-column">
-          <h2>To Do</h2>
+          <div className={'kanban-column-title'}>
+            <h6>️🔵 APPLIED </h6>
+            <p className={'user-counter'}>{todo.length}</p>
+          </div>
+
 
           {todo.map((task, index) => (
             <KanbanCard
@@ -81,7 +88,10 @@ export const KanbanBoard = () => {
         </div>
 
         <div className="kanban-column">
-          <h2>In Progress</h2>
+          <div className={'kanban-column-title'}>
+            <h6>🟠 NEED INFORMATION  </h6>
+            <p className={'user-counter'}>{inProgress.length}</p>
+          </div>
           {inProgress.map((task, index) => (
            <KanbanCard key={index} task={task} canMoveBack={true}  destination={'done'} moveBack={()=>moveBack(task, inProgress, todo)} moveTask={()=>moveTask(task, inProgress, done)}/>
 
@@ -89,14 +99,16 @@ export const KanbanBoard = () => {
         </div>
 
         <div className="kanban-column">
-          <h2>Done</h2>
+          <div className={'kanban-column-title'}>
+          <h6>🟢 GRADED </h6>
+            <p className={'user-counter'}>{done.length}</p>
+          </div>
           {done.map((task, index) => (
             <KanbanCard task={task} blockTask={true}  key={index} moveTask={()=>moveTask(task, done, todo)} />
 
           ))}
         </div>
       </div>
-    </div>
   );
 };
 

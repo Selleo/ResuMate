@@ -1,4 +1,7 @@
 import './KanbanCard.css'
+import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircleFill} from "react-icons/bs";
+import {HiChevronLeft, HiChevronRight} from "react-icons/hi";
+import {FaRegClock} from "react-icons/fa";
 
 
 export const KanbanCard = ({ task, moveTask, source, destination ,blockTask, moveBack, canMoveBack }) => {
@@ -7,32 +10,35 @@ export const KanbanCard = ({ task, moveTask, source, destination ,blockTask, mov
   return (
     <div className="kanban-card">
       <div className="card-header">
-        <img src={task.avatar} alt="Avatar" className="card-avatar" />
-        <div>
-          <p>#2137</p>
-          <h5>Esther Howard</h5>
-        </div>
+        <div> <img src={task.avatar} alt="Avatar" className="card-avatar" />
+          <div>
+            <p>#2137</p>
+            <h5>Esther Howard</h5>
+          </div></div>
+          <div><input type="checkbox"  className={'header-input'} /></div>
       </div>
       <div className="card-details">
 
         {task.links.map((link, index) => (
-          <div className={'badge'}>
-            <img src={link.icon} alt="Avatar" className="card-avatar" />
-            <a href={link.url} key={index}>{link.name}</a>
+          <div className={'badge-kanban'}>
+            <img src={link.icon} alt="Avatar" className="badge-icon" />
+            <a className={'badge-link'} href={link.url} key={index}>{link.name}</a>
           </div>
 
         ))}
       </div>
       <div className="card-points">
-        <p>Points: <span className='points'>817</span></p>
-        <p className={'date-time'}>16 June 2023</p>
-      </div>
-      <div className="card-footer">
+        <div className={'card-points-data'}><p>Points: <span className='points'>817</span></p>
+          <p className={'date-time'}><FaRegClock/> 16 June 2023</p></div>
+        <div className={'card-points-actions'}>
+          {canMoveBack &&( <button className={'card-button'} onClick={()=>moveBack(task, source, destination)}
+          ><HiChevronLeft className={'footer-icon'}/></button>)}
+          {!blockTask &&( <button className={'card-button'} onClick={() => moveTask(task, source, destination)}><HiChevronRight className={'footer-icon'}/></button>)}
 
-        {!blockTask &&( <button onClick={() => moveTask(task, source, destination)}>{`Move to ${destination}`}</button>)}
-        {canMoveBack &&( <button onClick={()=>moveBack(task, source, destination)}
-        >{`Move to Todo`}</button>)}
+        </div>
+
       </div>
+
     </div>
   );
 };

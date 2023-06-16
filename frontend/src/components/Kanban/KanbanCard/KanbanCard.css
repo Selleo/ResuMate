@@ -1,7 +1,6 @@
 .kanban-card {
-    border: 1px solid #ccc;
-    width: 532px;
-    border-radius: 5px;
+    width: 447px;
+    border-radius: 16px;
     background-color: #fff;
     margin-bottom: 10px;
     display: flex;
@@ -11,53 +10,99 @@
     display: flex;
     padding: 16px;
     gap: 10px;
+    justify-content: space-between;
 }
 .card-avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
+.header-input{
+    color-scheme: light;
+    border-color: #BFC0C4;
+    border-radius: 8px;
+}
+.header-input:checked {
+    border: none;
+    padding: 2px;
+    accent-color: #FF6D2A;
+    outline: 2px solid #FF6D2A;
+    outline-offset: 2px;
+
+}
+
+
 .card-header p {
     color: #696B72;
 }
 .card-details {
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
-}
-
-.card-details a {
-    color: #007bff;
-    text-decoration: none;
+    padding: 16px 16px;
+    margin-left: 20px;
 }
 
 .points{
     color: #FF6D2A;
 }
-.badge{
+.badge-kanban{
+    display: flex;
     background-color: #F4F5F5;
     color: #4C4D52;
-    padding: 2px 5px;
+    padding: 4px 8px;
     border-radius: 5px;
     font-size: 12px;
 }
+.badge-icon{
+    color: #FF6D2A;
+    font-size: 14px;
+}
+.badge-link{
+    color: #4C4D52;
+    text-decoration: none;
+}
 .date-time{
+    display: flex;
+    align-items: center;
+    gap: 4px;
     font-size: 14px;
 }
 .card-points {
     padding: 10px 16px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #F4F5F5;
     display: flex;
     gap: 10px;
     justify-content: space-between;
     align-items: center;
 }
-
-
+.card-points-data{
+    display: flex;
+    gap: 10px;
+}
+.card-points-actions{
+    display: flex;
+    gap: 10px;
+}
 .card-footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 16px;
 }
+.card-button{
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.card-button:hover{
+    background-color: #F4F5F5;
+}
+.footer-icon{
+    color: #4C4D52;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
