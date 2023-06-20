@@ -81,6 +81,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
     const dataBuffer = fs.readFileSync(file.path);
 
     const data = await pdfParse(dataBuffer);
+    console.log(data.text);
 
     const aiResponse = fetchResumeInformation(data.text).then(
       (response) => response.choices[0].message.content
